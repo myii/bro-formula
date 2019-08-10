@@ -28,19 +28,6 @@ platforms:
       provision_command:
         - curl -o bootstrap-salt.sh -L https://bootstrap.saltstack.com
         - sh bootstrap-salt.sh -XdPbfrq -x python3 git develop
-  #- name: fedora-30-develop-py3
-  #  driver:
-  #    image: netmanagers/salt-develop-py3:fedora-30
-  #    provision_command:
-  #      - curl -o bootstrap-salt.sh -L https://bootstrap.saltstack.com
-  #      - sh bootstrap-salt.sh -XdPbfrq -x python3 git develop
-  #- name: opensuse-leap-15-develop-py3
-  #  driver:
-  #    image: netmanagers/salt-develop-py3:opensuse-leap-15
-  #    provision_command:
-  #      - curl -o bootstrap-salt.sh -L https://bootstrap.saltstack.com
-  #      - sh bootstrap-salt.sh -XdPbfrq -x python3 git develop
-  #    run_command: /usr/lib/systemd/systemd
   - name: amazonlinux-2-develop-py2
     driver:
       image: netmanagers/salt-develop-py2:amazonlinux-2
@@ -58,13 +45,6 @@ platforms:
   - name: centos-7-2019-2-py3
     driver:
       image: netmanagers/salt-2019.2-py3:centos-7
-  #- name: fedora-30-2019-2-py3
-  #  driver:
-  #    image: netmanagers/salt-2019.2-py3:fedora-30
-  #- name: opensuse-leap-15-2019-2-py3
-  #  driver:
-  #    image: netmanagers/salt-2019.2-py3:opensuse-leap-15
-  #    run_command: /usr/lib/systemd/systemd
   - name: amazonlinux-2-2019-2-py2
     driver:
       image: netmanagers/salt-2019.2-py2:amazonlinux-2
@@ -79,20 +59,13 @@ platforms:
   - name: centos-7-2018-3-py2
     driver:
       image: netmanagers/salt-2018.3-py2:centos-7
-  #- name: fedora-29-2018-3-py2
-  #  driver:
-  #    image: netmanagers/salt-2018.3-py2:fedora-29
-  #- name: opensuse-leap-15-2018-3-py2
-  #  driver:
-  #    image: netmanagers/salt-2018.3-py2:opensuse-leap-15
-  #    run_command: /usr/lib/systemd/systemd
   - name: amazonlinux-2-2018-3-py2
     driver:
       image: netmanagers/salt-2018.3-py2:amazonlinux-2
 
 provisioner:
   name: salt_solo
-  log_level: info
+  log_level: debug
   salt_install: none
   require_chef: false
   formula: bro
